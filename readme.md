@@ -90,6 +90,7 @@ r
 
 8/16 - work
 
-9/17 - WORK
+8/17 - WORK
+8/18 - work
+8/19 - work
 
-9/20 - work
