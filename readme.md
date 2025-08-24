@@ -96,3 +96,4 @@ r
 8/20 - work!
 8/22 - work
 8/23-  work 
+8/24 - work
