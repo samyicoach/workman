@@ -3,7 +3,7 @@
 // returns a manifest conforming to harness/schema.json.
 import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { VIEWPORTS, ensureDir, slugForPath, nowIso, REPORTS } from './util.mjs';
+import { VIEWPORTS, ensureDir, slugForPath, nowIso, reportDirs } from './util.mjs';
 import { launch, openPage, screenshot } from './browser.mjs';
 import { loadPolicy } from './policy.mjs';
 
@@ -24,7 +24,8 @@ async function discoverLinks(page, target) {
 
 export async function scan({ policyId, target, pages, phase = 'baseline', crawl = false, outDir }) {
   const policy = await loadPolicy(policyId);
-  const dir = ensureDir(outDir || (phase === 'baseline' ? REPORTS.baseline : REPORTS.current));
+  const dirs = reportDirs(policy.id);
+  const dir = ensureDir(outDir || (phase === 'baseline' ? dirs.baseline : dirs.current));
   const phaseDirName = phase === 'baseline' ? 'baseline' : 'current';
 
   const browser = await launch();
@@ -47,7 +48,7 @@ export async function scan({ policyId, target, pages, phase = 'baseline', crawl 
       const { context, page } = await openPage(browser, url, vp);
       const shotPath = join(dir, `${slug}-${vp.name}.png`);
       await screenshot(page, shotPath);
-      record.screenshots[vp.name] = `reports/${phaseDirName}/${slug}-${vp.name}.png`;
+      record.screenshots[vp.name] = `reports/${policy.id}/${phaseDirName}/${slug}-${vp.name}.png`;
       record.violations.push(...(await policy.scanPage(page, { path, viewport: vp.name })));
       await context.close();
     }

@@ -13,14 +13,18 @@ export const VIEWPORTS = [
   { name: 'mobile', width: 390, height: 844 },
 ];
 
-// Standard output locations. `baseline/` is captured once and never mutated;
-// `current/` is regenerated on every verification pass.
-export const REPORTS = {
-  root: join(ROOT, 'reports'),
-  baseline: join(ROOT, 'reports', 'baseline'),
-  current: join(ROOT, 'reports', 'current'),
-  runs: join(ROOT, 'reports', 'runs'),
-};
+// Output locations are namespaced per policy so runs never clobber each other:
+//   reports/<policy>/baseline   captured once, never mutated
+//   reports/<policy>/current    regenerated on every verification pass
+export const REPORTS_ROOT = join(ROOT, 'reports');
+
+export function reportDirs(policy) {
+  return {
+    root: join(REPORTS_ROOT, policy),
+    baseline: join(REPORTS_ROOT, policy, 'baseline'),
+    current: join(REPORTS_ROOT, policy, 'current'),
+  };
+}
 
 export function ensureDir(p) {
   mkdirSync(p, { recursive: true });

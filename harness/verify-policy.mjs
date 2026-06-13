@@ -11,7 +11,7 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import defaults from './config.mjs';
-import { parseArgs, REPORTS } from './lib/util.mjs';
+import { parseArgs, reportDirs } from './lib/util.mjs';
 import { scan } from './lib/scan.mjs';
 
 function countByPageRule(manifest) {
@@ -28,7 +28,7 @@ async function main() {
   const policyId = args.policy || defaults.policy;
   const requireZero = Boolean(args['require-zero']);
 
-  const baselinePath = join(REPORTS.baseline, 'violations.json');
+  const baselinePath = join(reportDirs(policyId).baseline, 'violations.json');
   if (!existsSync(baselinePath)) {
     console.error('[verify-A] no baseline found — run `npm run crawl` first.');
     process.exit(2);

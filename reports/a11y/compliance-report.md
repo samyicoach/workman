@@ -31,19 +31,19 @@
 
 | before | after |
 | --- | --- |
-| ![](reports/baseline/index-desktop.png) | ![](reports/current/index-desktop.png) |
+| ![](baseline/index-desktop.png) | ![](current/index-desktop.png) |
 
 | before | after |
 | --- | --- |
-| ![](reports/baseline/index-mobile.png) | ![](reports/current/index-mobile.png) |
+| ![](baseline/index-mobile.png) | ![](current/index-mobile.png) |
 
 ### `/about.html`
 
 | before | after |
 | --- | --- |
-| ![](reports/baseline/about-desktop.png) | ![](reports/current/about-desktop.png) |
+| ![](baseline/about-desktop.png) | ![](current/about-desktop.png) |
 
 | before | after |
 | --- | --- |
-| ![](reports/baseline/about-mobile.png) | ![](reports/current/about-mobile.png) |
+| ![](baseline/about-mobile.png) | ![](current/about-mobile.png) |
 

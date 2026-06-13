@@ -14,7 +14,8 @@
 //   node harness/visual-capture.mjs [--threshold 0.02]
 import { readFileSync, writeFileSync, existsSync, readdirSync } from 'node:fs';
 import { join, basename } from 'node:path';
-import { parseArgs, REPORTS } from './lib/util.mjs';
+import defaults from './config.mjs';
+import { parseArgs, reportDirs } from './lib/util.mjs';
 
 // width/height live at byte offsets 16 and 20 of a PNG (big-endian uint32).
 function pngSize(path) {
@@ -24,20 +25,22 @@ function pngSize(path) {
 
 function main() {
   const args = parseArgs();
+  const policyId = args.policy || defaults.policy;
+  const dirs = reportDirs(policyId);
   const threshold = Number(args.threshold ?? 0.02); // 2% full-page height change
 
-  if (!existsSync(REPORTS.baseline) || !existsSync(REPORTS.current)) {
-    console.error('[verify-B] need both reports/baseline and reports/current — run crawl then verify first.');
+  if (!existsSync(dirs.baseline) || !existsSync(dirs.current)) {
+    console.error(`[verify-B] need both reports/${policyId}/baseline and /current — run crawl then verify first.`);
     process.exit(2);
   }
 
-  const shots = readdirSync(REPORTS.baseline).filter((f) => f.endsWith('.png'));
+  const shots = readdirSync(dirs.baseline).filter((f) => f.endsWith('.png'));
   const pairs = [];
   let flagged = 0;
 
   for (const f of shots) {
-    const basePath = join(REPORTS.baseline, f);
-    const curPath = join(REPORTS.current, f);
+    const basePath = join(dirs.baseline, f);
+    const curPath = join(dirs.current, f);
     if (!existsSync(curPath)) {
       pairs.push({ shot: f, status: 'missing-current', note: 'no current screenshot — page not re-captured' });
       flagged++;
@@ -51,8 +54,8 @@ function main() {
     if (layoutShift) flagged++;
     pairs.push({
       shot: f,
-      baseline: `baseline/${f}`,
-      current: `current/${f}`,
+      baseline: `../baseline/${f}`,
+      current: `${f}`,
       baseSize: b,
       currentSize: c,
       heightDelta: Number(heightDelta.toFixed(4)),
@@ -61,8 +64,8 @@ function main() {
     });
   }
 
-  writeFileSync(join(REPORTS.current, 'visual-diff.json'), JSON.stringify({ threshold, pairs }, null, 2));
-  writeContactSheet(pairs, threshold);
+  writeFileSync(join(dirs.current, 'visual-diff.json'), JSON.stringify({ policy: policyId, threshold, pairs }, null, 2));
+  writeContactSheet(dirs.current, pairs, threshold);
 
   console.log('\n  screenshot                     Δheight   signal');
   console.log('  ' + '-'.repeat(54));
@@ -70,7 +73,7 @@ function main() {
     const d = p.heightDelta != null ? (p.heightDelta * 100).toFixed(1) + '%' : '   -';
     console.log(`  ${p.shot.padEnd(30)} ${String(d).padStart(6)}   ${p.layoutShiftSignal ? 'REVIEW' : 'ok'}`);
   }
-  console.log(`\n[verify-B] wrote reports/current/visual-diff.json and visual-review.html`);
+  console.log(`\n[verify-B] wrote reports/${policyId}/current/visual-diff.json and visual-review.html`);
   if (flagged) {
     console.error(`[verify-B] ${flagged} pair(s) flagged for layout-shift review — open visual-review.html and judge with vision.`);
     process.exit(1);
@@ -78,7 +81,7 @@ function main() {
   console.log('[verify-B] PASS — no layout-shift signal. Confirm allowed deltas (contrast/focus) with vision.');
 }
 
-function writeContactSheet(pairs, threshold) {
+function writeContactSheet(outDir, pairs, threshold) {
   const rows = pairs
     .map(
       (p) => `
@@ -107,7 +110,7 @@ function writeContactSheet(pairs, threshold) {
 <p>Layout-shift threshold: Δheight &gt; ${(threshold * 100).toFixed(0)}%. Allowed deltas: contrast, focus ring, link underline. Forbidden: layout shift, font/image swaps.</p>
 ${rows}
 </body></html>`;
-  writeFileSync(join(REPORTS.current, 'visual-review.html'), html);
+  writeFileSync(join(outDir, 'visual-review.html'), html);
 }
 
 main();

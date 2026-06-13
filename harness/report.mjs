@@ -5,7 +5,8 @@
 //   node harness/report.mjs [--out reports/compliance-report.md]
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
-import { parseArgs, REPORTS, ROOT } from './lib/util.mjs';
+import defaults from './config.mjs';
+import { parseArgs, reportDirs } from './lib/util.mjs';
 
 function byRule(manifest) {
   const m = {};
@@ -15,16 +16,18 @@ function byRule(manifest) {
 
 function main() {
   const args = parseArgs();
-  const basePath = join(REPORTS.baseline, 'violations.json');
-  const curPath = join(REPORTS.current, 'violations.json');
+  const policyId = args.policy || defaults.policy;
+  const dirs = reportDirs(policyId);
+  const basePath = join(dirs.baseline, 'violations.json');
+  const curPath = join(dirs.current, 'violations.json');
   if (!existsSync(basePath) || !existsSync(curPath)) {
     console.error('[report] need baseline and current manifests — run crawl + verify first.');
     process.exit(2);
   }
   const base = JSON.parse(readFileSync(basePath, 'utf8'));
   const cur = JSON.parse(readFileSync(curPath, 'utf8'));
-  const visual = existsSync(join(REPORTS.current, 'visual-diff.json'))
-    ? JSON.parse(readFileSync(join(REPORTS.current, 'visual-diff.json'), 'utf8'))
+  const visual = existsSync(join(dirs.current, 'visual-diff.json'))
+    ? JSON.parse(readFileSync(join(dirs.current, 'visual-diff.json'), 'utf8'))
     : null;
 
   const b = byRule(base);
@@ -52,11 +55,11 @@ function main() {
     md += `### \`${p.path}\`\n\n`;
     for (const vp of Object.keys(p.screenshots)) {
       md += `| before | after |\n| --- | --- |\n`;
-      md += `| ![](reports/baseline/${p.slug}-${vp}.png) | ![](reports/current/${p.slug}-${vp}.png) |\n\n`;
+      md += `| ![](baseline/${p.slug}-${vp}.png) | ![](current/${p.slug}-${vp}.png) |\n\n`;
     }
   }
 
-  const outPath = args.out ? join(process.cwd(), args.out) : join(ROOT, 'reports', 'compliance-report.md');
+  const outPath = args.out ? join(process.cwd(), args.out) : join(dirs.root, 'compliance-report.md');
   writeFileSync(outPath, md);
   console.log(`[report] wrote ${outPath}`);
   console.log(`[report] ${base.summary.totalViolations} -> ${cur.summary.totalViolations} violations`);

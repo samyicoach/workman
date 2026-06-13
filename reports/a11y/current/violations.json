@@ -1,0 +1,37 @@
+{
+  "policy": "a11y",
+  "generatedAt": "2026-06-13T22:06:22.434Z",
+  "target": "http://localhost:8080",
+  "phase": "verify",
+  "viewports": [
+    "desktop",
+    "mobile"
+  ],
+  "summary": {
+    "pages": 2,
+    "totalViolations": 0,
+    "byImpact": {}
+  },
+  "pages": [
+    {
+      "url": "http://localhost:8080/index.html",
+      "path": "/index.html",
+      "slug": "index",
+      "screenshots": {
+        "desktop": "reports/a11y/current/index-desktop.png",
+        "mobile": "reports/a11y/current/index-mobile.png"
+      },
+      "violations": []
+    },
+    {
+      "url": "http://localhost:8080/about.html",
+      "path": "/about.html",
+      "slug": "about",
+      "screenshots": {
+        "desktop": "reports/a11y/current/about-desktop.png",
+        "mobile": "reports/a11y/current/about-mobile.png"
+      },
+      "violations": []
+    }
+  ]
+}
