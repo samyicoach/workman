@@ -16,6 +16,7 @@
       },
       "heightDelta": 0.0064,
       "layoutShiftSignal": false,
+      "accepted": false,
       "verdict": "within threshold (vision still decides)"
     },
     {
@@ -32,7 +33,9 @@
       },
       "heightDelta": 0.0529,
       "layoutShiftSignal": true,
-      "verdict": "REVIEW — possible layout shift"
+      "accepted": true,
+      "acceptedReason": "Δheight is the responsive-image fix: the baseline image overflowed the viewport; constraining it to max-width:100% made it fit (and shorter). Allowed improvement, not a forbidden layout shift.",
+      "verdict": "flagged but ACCEPTED by vision"
     },
     {
       "shot": "index-desktop.png",
@@ -48,6 +51,7 @@
       },
       "heightDelta": 0,
       "layoutShiftSignal": false,
+      "accepted": false,
       "verdict": "within threshold (vision still decides)"
     },
     {
@@ -64,6 +68,7 @@
       },
       "heightDelta": 0,
       "layoutShiftSignal": false,
+      "accepted": false,
       "verdict": "within threshold (vision still decides)"
     }
   ]

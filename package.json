@@ -11,6 +11,10 @@
     "capture": "node harness/visual-capture.mjs",
     "locales": "node harness/locale-shots.mjs",
     "report": "node harness/report.mjs",
+    "keyboard": "node harness/keyboard.mjs",
+    "rubric": "node harness/rubric-status.mjs",
+    "retrofit": "node harness/retrofit.mjs",
+    "dashboard": "node harness/dashboard.mjs",
     "smoke": "node harness/smoke.mjs"
   },
   "dependencies": {

@@ -34,16 +34,21 @@ function main() {
     process.exit(2);
   }
 
+  // Recorded Verifier B (vision) decisions: a flagged pair listed here has been
+  // looked at and accepted (e.g. an allowed contrast/overflow correction).
+  const acceptedPath = join(dirs.root, 'accepted.json');
+  const accepted = existsSync(acceptedPath) ? JSON.parse(readFileSync(acceptedPath, 'utf8')).acceptedShots || {} : {};
+
   const shots = readdirSync(dirs.baseline).filter((f) => f.endsWith('.png'));
   const pairs = [];
-  let flagged = 0;
+  let unaccepted = 0;
 
   for (const f of shots) {
     const basePath = join(dirs.baseline, f);
     const curPath = join(dirs.current, f);
     if (!existsSync(curPath)) {
       pairs.push({ shot: f, status: 'missing-current', note: 'no current screenshot — page not re-captured' });
-      flagged++;
+      unaccepted++;
       continue;
     }
     const b = pngSize(basePath);
@@ -51,7 +56,8 @@ function main() {
     const heightDelta = Math.abs(c.height - b.height) / b.height;
     const widthChanged = b.width !== c.width;
     const layoutShift = heightDelta > threshold || widthChanged;
-    if (layoutShift) flagged++;
+    const isAccepted = layoutShift && f in accepted;
+    if (layoutShift && !isAccepted) unaccepted++;
     pairs.push({
       shot: f,
       baseline: `../baseline/${f}`,
@@ -60,7 +66,13 @@ function main() {
       currentSize: c,
       heightDelta: Number(heightDelta.toFixed(4)),
       layoutShiftSignal: layoutShift,
-      verdict: layoutShift ? 'REVIEW — possible layout shift' : 'within threshold (vision still decides)',
+      accepted: isAccepted,
+      acceptedReason: isAccepted ? accepted[f] : undefined,
+      verdict: !layoutShift
+        ? 'within threshold (vision still decides)'
+        : isAccepted
+          ? 'flagged but ACCEPTED by vision'
+          : 'REVIEW — possible layout shift',
     });
   }
 
@@ -71,14 +83,15 @@ function main() {
   console.log('  ' + '-'.repeat(54));
   for (const p of pairs) {
     const d = p.heightDelta != null ? (p.heightDelta * 100).toFixed(1) + '%' : '   -';
-    console.log(`  ${p.shot.padEnd(30)} ${String(d).padStart(6)}   ${p.layoutShiftSignal ? 'REVIEW' : 'ok'}`);
+    const sig = !p.layoutShiftSignal ? 'ok' : p.accepted ? 'REVIEW (accepted)' : 'REVIEW';
+    console.log(`  ${p.shot.padEnd(30)} ${String(d).padStart(6)}   ${sig}`);
   }
   console.log(`\n[verify-B] wrote reports/${policyId}/current/visual-diff.json and visual-review.html`);
-  if (flagged) {
-    console.error(`[verify-B] ${flagged} pair(s) flagged for layout-shift review — open visual-review.html and judge with vision.`);
+  if (unaccepted) {
+    console.error(`[verify-B] FAIL — ${unaccepted} unaccepted layout-shift pair(s). Open visual-review.html and judge with vision.`);
     process.exit(1);
   }
-  console.log('[verify-B] PASS — no layout-shift signal. Confirm allowed deltas (contrast/focus) with vision.');
+  console.log('[verify-B] PASS — no unaccepted layout shift. Allowed deltas (contrast/focus) and recorded acceptances only.');
 }
 
 function writeContactSheet(outDir, pairs, threshold) {
