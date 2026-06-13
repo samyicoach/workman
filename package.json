@@ -9,6 +9,7 @@
     "crawl": "node harness/crawl.mjs",
     "verify": "node harness/verify-policy.mjs",
     "capture": "node harness/visual-capture.mjs",
+    "locales": "node harness/locale-shots.mjs",
     "report": "node harness/report.mjs",
     "smoke": "node harness/smoke.mjs"
   },

@@ -1,0 +1,70 @@
+{
+  "policy": "i18n",
+  "threshold": 0.02,
+  "pairs": [
+    {
+      "shot": "about-desktop.png",
+      "baseline": "../baseline/about-desktop.png",
+      "current": "about-desktop.png",
+      "baseSize": {
+        "width": 1440,
+        "height": 1094
+      },
+      "currentSize": {
+        "width": 1440,
+        "height": 1087
+      },
+      "heightDelta": 0.0064,
+      "layoutShiftSignal": false,
+      "verdict": "within threshold (vision still decides)"
+    },
+    {
+      "shot": "about-mobile.png",
+      "baseline": "../baseline/about-mobile.png",
+      "current": "about-mobile.png",
+      "baseSize": {
+        "width": 464,
+        "height": 1153
+      },
+      "currentSize": {
+        "width": 390,
+        "height": 1092
+      },
+      "heightDelta": 0.0529,
+      "layoutShiftSignal": true,
+      "verdict": "REVIEW — possible layout shift"
+    },
+    {
+      "shot": "index-desktop.png",
+      "baseline": "../baseline/index-desktop.png",
+      "current": "index-desktop.png",
+      "baseSize": {
+        "width": 1440,
+        "height": 1447
+      },
+      "currentSize": {
+        "width": 1440,
+        "height": 1447
+      },
+      "heightDelta": 0,
+      "layoutShiftSignal": false,
+      "verdict": "within threshold (vision still decides)"
+    },
+    {
+      "shot": "index-mobile.png",
+      "baseline": "../baseline/index-mobile.png",
+      "current": "index-mobile.png",
+      "baseSize": {
+        "width": 390,
+        "height": 1723
+      },
+      "currentSize": {
+        "width": 390,
+        "height": 1723
+      },
+      "heightDelta": 0,
+      "layoutShiftSignal": false,
+      "verdict": "within threshold (vision still decides)"
+    }
+  ]
+}

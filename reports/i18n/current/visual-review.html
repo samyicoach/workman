@@ -1,0 +1,47 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8" />
+<title>Retrofit — Verifier B contact sheet</title>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 2rem; color: #14181d; }
+  .pair { border-top: 1px solid #e5e7eb; padding: 1.5rem 0; }
+  .pair.flag { background: #fff7ed; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  figure { margin: 0; }
+  figcaption { font-size: 0.8rem; color: #6b7280; margin-bottom: 0.35rem; }
+  img { width: 100%; border: 1px solid #e5e7eb; border-radius: 8px; }
+  small { color: #6b7280; font-weight: 400; }
+</style></head><body>
+<h1>Verifier B — visual review</h1>
+<p>Layout-shift threshold: Δheight &gt; 2%. Allowed deltas: contrast, focus ring, link underline. Forbidden: layout shift, font/image swaps.</p>
+
+    <section class="pair ">
+      <h2>about-desktop.png <small>Δheight 0.6% — within threshold (vision still decides)</small></h2>
+      <div class="cols">
+        <figure><figcaption>baseline</figcaption><img src="../baseline/about-desktop.png" /></figure>
+        <figure><figcaption>current</figcaption><img src="about-desktop.png" /></figure>
+      </div>
+    </section>
+
+    <section class="pair flag">
+      <h2>about-mobile.png <small>Δheight 5.3% — REVIEW — possible layout shift</small></h2>
+      <div class="cols">
+        <figure><figcaption>baseline</figcaption><img src="../baseline/about-mobile.png" /></figure>
+        <figure><figcaption>current</figcaption><img src="about-mobile.png" /></figure>
+      </div>
+    </section>
+
+    <section class="pair ">
+      <h2>index-desktop.png <small>Δheight 0.0% — within threshold (vision still decides)</small></h2>
+      <div class="cols">
+        <figure><figcaption>baseline</figcaption><img src="../baseline/index-desktop.png" /></figure>
+        <figure><figcaption>current</figcaption><img src="index-desktop.png" /></figure>
+      </div>
+    </section>
+
+    <section class="pair ">
+      <h2>index-mobile.png <small>Δheight 0.0% — within threshold (vision still decides)</small></h2>
+      <div class="cols">
+        <figure><figcaption>baseline</figcaption><img src="../baseline/index-mobile.png" /></figure>
+        <figure><figcaption>current</figcaption><img src="index-mobile.png" /></figure>
+      </div>
+    </section>
+</body></html>

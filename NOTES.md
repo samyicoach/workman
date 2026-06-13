@@ -27,6 +27,20 @@ repeats. Append; never delete a rule that is still true.
   the design.
 - **Base-locale English must stay pixel-identical.** Routing English through the
   catalog must reproduce the exact original strings.
+- **Standalone images need `max-width: 100%`.** The Polyglot overflow check
+  surfaced a bare `<img>` on about.html rendering at its intrinsic 440px width and
+  overflowing the 390px mobile viewport — in every locale, English included. A
+  different policy (Ramp) never caught it because axe doesn't test horizontal
+  overflow. Lesson: different policies surface different defects; the overflow
+  detector is the i18n policy's job.
+
+## Acceptances log
+
+- **2026-06-13 — about-mobile English Δheight 5.3% under Polyglot.** Verifier B's
+  pixel-diff flagged a base-locale change. Vision verdict: ACCEPT. The i18n
+  baseline captured the image *overflowing the viewport*; constraining it to
+  `max-width: 100%` made it fit (and shorter). That is the required overflow fix,
+  not a regression — "pixel-identical" defers to a defect being corrected.
 
 ## Rejections log
 

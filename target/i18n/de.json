@@ -1,4 +1,25 @@
 {
   "brand": "Harbor Light Gemeinschaftsküche",
-  "nav.home": "Startseite"
+  "nav.home": "Startseite",
+  "nav.about": "Über uns",
+  "nav.donate": "Jetzt spenden",
+  "hero.title": "Warme Mahlzeiten für jeden Nachbarn",
+  "hero.lede": "Wir servieren täglich 400 kostenlose Mahlzeiten im Hafenviertel – ganz ohne Fragen.",
+  "hero.cta": "Engagiere dich ehrenamtlich",
+  "programs.title": "Unsere Programme",
+  "programs.meals.title": "Täglicher Mahlzeitendienst",
+  "programs.meals.body": "Frühstück und Abendessen, sieben Tage die Woche.",
+  "programs.garden.title": "Gemeinschaftsgarten",
+  "programs.garden.body": "Frische Erzeugnisse, angebaut und geteilt vom ganzen Viertel.",
+  "signup.title": "Bleiben Sie in Kontakt",
+  "signup.email": "E-Mail-Adresse",
+  "footer.copy": "© Harbor Light Gemeinschaftsküche",
+  "about.title": "Über unsere Küche",
+  "about.lede": "Gegründet 2009, haben wir mehr als zwei Millionen Mahlzeiten serviert.",
+  "about.mission.title": "Unsere Mission",
+  "about.mission.body": "Das Hafenviertel mit Würde versorgen, ein Teller nach dem anderen.",
+  "about.contact.title": "Kontakt aufnehmen",
+  "about.contact.name": "Ihr Name",
+  "about.contact.message": "Nachricht",
+  "about.contact.send": "Absenden"
 }

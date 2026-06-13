@@ -1,0 +1,1055 @@
+{
+  "policy": "i18n",
+  "generatedAt": "2026-06-13T22:07:37.544Z",
+  "target": "http://localhost:8080",
+  "phase": "baseline",
+  "viewports": [
+    "desktop",
+    "mobile"
+  ],
+  "summary": {
+    "pages": 3,
+    "totalViolations": 63,
+    "byImpact": {
+      "serious": 63
+    }
+  },
+  "pages": [
+    {
+      "url": "http://localhost:8080",
+      "path": "_source",
+      "slug": "_source",
+      "screenshots": {},
+      "violations": [
+        {
+          "id": "i18n:missing-key#ko:nav.about",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "ko.json: key \"nav.about\" missing",
+          "nodes": [
+            {
+              "target": [
+                "ko.json",
+                "nav.about"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#ko:nav.donate",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "ko.json: key \"nav.donate\" missing",
+          "nodes": [
+            {
+              "target": [
+                "ko.json",
+                "nav.donate"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#ko:hero.title",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "ko.json: key \"hero.title\" missing",
+          "nodes": [
+            {
+              "target": [
+                "ko.json",
+                "hero.title"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#ko:hero.lede",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "ko.json: key \"hero.lede\" missing",
+          "nodes": [
+            {
+              "target": [
+                "ko.json",
+                "hero.lede"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#ko:hero.cta",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "ko.json: key \"hero.cta\" missing",
+          "nodes": [
+            {
+              "target": [
+                "ko.json",
+                "hero.cta"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#ko:programs.title",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "ko.json: key \"programs.title\" missing",
+          "nodes": [
+            {
+              "target": [
+                "ko.json",
+                "programs.title"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#ko:programs.meals.title",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "ko.json: key \"programs.meals.title\" missing",
+          "nodes": [
+            {
+              "target": [
+                "ko.json",
+                "programs.meals.title"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#ko:programs.meals.body",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "ko.json: key \"programs.meals.body\" missing",
+          "nodes": [
+            {
+              "target": [
+                "ko.json",
+                "programs.meals.body"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#ko:programs.garden.title",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "ko.json: key \"programs.garden.title\" missing",
+          "nodes": [
+            {
+              "target": [
+                "ko.json",
+                "programs.garden.title"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#ko:programs.garden.body",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "ko.json: key \"programs.garden.body\" missing",
+          "nodes": [
+            {
+              "target": [
+                "ko.json",
+                "programs.garden.body"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#ko:signup.title",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "ko.json: key \"signup.title\" missing",
+          "nodes": [
+            {
+              "target": [
+                "ko.json",
+                "signup.title"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#ko:signup.email",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "ko.json: key \"signup.email\" missing",
+          "nodes": [
+            {
+              "target": [
+                "ko.json",
+                "signup.email"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#ko:footer.copy",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "ko.json: key \"footer.copy\" missing",
+          "nodes": [
+            {
+              "target": [
+                "ko.json",
+                "footer.copy"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#ko:about.title",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "ko.json: key \"about.title\" missing",
+          "nodes": [
+            {
+              "target": [
+                "ko.json",
+                "about.title"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#ko:about.lede",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "ko.json: key \"about.lede\" missing",
+          "nodes": [
+            {
+              "target": [
+                "ko.json",
+                "about.lede"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#ko:about.mission.title",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "ko.json: key \"about.mission.title\" missing",
+          "nodes": [
+            {
+              "target": [
+                "ko.json",
+                "about.mission.title"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#ko:about.mission.body",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "ko.json: key \"about.mission.body\" missing",
+          "nodes": [
+            {
+              "target": [
+                "ko.json",
+                "about.mission.body"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#ko:about.contact.title",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "ko.json: key \"about.contact.title\" missing",
+          "nodes": [
+            {
+              "target": [
+                "ko.json",
+                "about.contact.title"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#ko:about.contact.name",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "ko.json: key \"about.contact.name\" missing",
+          "nodes": [
+            {
+              "target": [
+                "ko.json",
+                "about.contact.name"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#ko:about.contact.message",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "ko.json: key \"about.contact.message\" missing",
+          "nodes": [
+            {
+              "target": [
+                "ko.json",
+                "about.contact.message"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#ko:about.contact.send",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "ko.json: key \"about.contact.send\" missing",
+          "nodes": [
+            {
+              "target": [
+                "ko.json",
+                "about.contact.send"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#es:nav.about",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "es.json: key \"nav.about\" missing",
+          "nodes": [
+            {
+              "target": [
+                "es.json",
+                "nav.about"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#es:nav.donate",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "es.json: key \"nav.donate\" missing",
+          "nodes": [
+            {
+              "target": [
+                "es.json",
+                "nav.donate"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#es:hero.title",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "es.json: key \"hero.title\" missing",
+          "nodes": [
+            {
+              "target": [
+                "es.json",
+                "hero.title"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#es:hero.lede",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "es.json: key \"hero.lede\" missing",
+          "nodes": [
+            {
+              "target": [
+                "es.json",
+                "hero.lede"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#es:hero.cta",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "es.json: key \"hero.cta\" missing",
+          "nodes": [
+            {
+              "target": [
+                "es.json",
+                "hero.cta"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#es:programs.title",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "es.json: key \"programs.title\" missing",
+          "nodes": [
+            {
+              "target": [
+                "es.json",
+                "programs.title"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#es:programs.meals.title",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "es.json: key \"programs.meals.title\" missing",
+          "nodes": [
+            {
+              "target": [
+                "es.json",
+                "programs.meals.title"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#es:programs.meals.body",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "es.json: key \"programs.meals.body\" missing",
+          "nodes": [
+            {
+              "target": [
+                "es.json",
+                "programs.meals.body"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#es:programs.garden.title",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "es.json: key \"programs.garden.title\" missing",
+          "nodes": [
+            {
+              "target": [
+                "es.json",
+                "programs.garden.title"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#es:programs.garden.body",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "es.json: key \"programs.garden.body\" missing",
+          "nodes": [
+            {
+              "target": [
+                "es.json",
+                "programs.garden.body"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#es:signup.title",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "es.json: key \"signup.title\" missing",
+          "nodes": [
+            {
+              "target": [
+                "es.json",
+                "signup.title"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#es:signup.email",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "es.json: key \"signup.email\" missing",
+          "nodes": [
+            {
+              "target": [
+                "es.json",
+                "signup.email"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#es:footer.copy",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "es.json: key \"footer.copy\" missing",
+          "nodes": [
+            {
+              "target": [
+                "es.json",
+                "footer.copy"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#es:about.title",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "es.json: key \"about.title\" missing",
+          "nodes": [
+            {
+              "target": [
+                "es.json",
+                "about.title"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#es:about.lede",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "es.json: key \"about.lede\" missing",
+          "nodes": [
+            {
+              "target": [
+                "es.json",
+                "about.lede"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#es:about.mission.title",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "es.json: key \"about.mission.title\" missing",
+          "nodes": [
+            {
+              "target": [
+                "es.json",
+                "about.mission.title"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#es:about.mission.body",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "es.json: key \"about.mission.body\" missing",
+          "nodes": [
+            {
+              "target": [
+                "es.json",
+                "about.mission.body"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#es:about.contact.title",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "es.json: key \"about.contact.title\" missing",
+          "nodes": [
+            {
+              "target": [
+                "es.json",
+                "about.contact.title"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#es:about.contact.name",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "es.json: key \"about.contact.name\" missing",
+          "nodes": [
+            {
+              "target": [
+                "es.json",
+                "about.contact.name"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#es:about.contact.message",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "es.json: key \"about.contact.message\" missing",
+          "nodes": [
+            {
+              "target": [
+                "es.json",
+                "about.contact.message"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#es:about.contact.send",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "es.json: key \"about.contact.send\" missing",
+          "nodes": [
+            {
+              "target": [
+                "es.json",
+                "about.contact.send"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#de:nav.about",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "de.json: key \"nav.about\" missing",
+          "nodes": [
+            {
+              "target": [
+                "de.json",
+                "nav.about"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#de:nav.donate",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "de.json: key \"nav.donate\" missing",
+          "nodes": [
+            {
+              "target": [
+                "de.json",
+                "nav.donate"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#de:hero.title",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "de.json: key \"hero.title\" missing",
+          "nodes": [
+            {
+              "target": [
+                "de.json",
+                "hero.title"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#de:hero.lede",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "de.json: key \"hero.lede\" missing",
+          "nodes": [
+            {
+              "target": [
+                "de.json",
+                "hero.lede"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#de:hero.cta",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "de.json: key \"hero.cta\" missing",
+          "nodes": [
+            {
+              "target": [
+                "de.json",
+                "hero.cta"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#de:programs.title",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "de.json: key \"programs.title\" missing",
+          "nodes": [
+            {
+              "target": [
+                "de.json",
+                "programs.title"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#de:programs.meals.title",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "de.json: key \"programs.meals.title\" missing",
+          "nodes": [
+            {
+              "target": [
+                "de.json",
+                "programs.meals.title"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#de:programs.meals.body",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "de.json: key \"programs.meals.body\" missing",
+          "nodes": [
+            {
+              "target": [
+                "de.json",
+                "programs.meals.body"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#de:programs.garden.title",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "de.json: key \"programs.garden.title\" missing",
+          "nodes": [
+            {
+              "target": [
+                "de.json",
+                "programs.garden.title"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#de:programs.garden.body",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "de.json: key \"programs.garden.body\" missing",
+          "nodes": [
+            {
+              "target": [
+                "de.json",
+                "programs.garden.body"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#de:signup.title",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "de.json: key \"signup.title\" missing",
+          "nodes": [
+            {
+              "target": [
+                "de.json",
+                "signup.title"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#de:signup.email",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "de.json: key \"signup.email\" missing",
+          "nodes": [
+            {
+              "target": [
+                "de.json",
+                "signup.email"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#de:footer.copy",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "de.json: key \"footer.copy\" missing",
+          "nodes": [
+            {
+              "target": [
+                "de.json",
+                "footer.copy"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#de:about.title",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "de.json: key \"about.title\" missing",
+          "nodes": [
+            {
+              "target": [
+                "de.json",
+                "about.title"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#de:about.lede",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "de.json: key \"about.lede\" missing",
+          "nodes": [
+            {
+              "target": [
+                "de.json",
+                "about.lede"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#de:about.mission.title",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "de.json: key \"about.mission.title\" missing",
+          "nodes": [
+            {
+              "target": [
+                "de.json",
+                "about.mission.title"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#de:about.mission.body",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "de.json: key \"about.mission.body\" missing",
+          "nodes": [
+            {
+              "target": [
+                "de.json",
+                "about.mission.body"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#de:about.contact.title",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "de.json: key \"about.contact.title\" missing",
+          "nodes": [
+            {
+              "target": [
+                "de.json",
+                "about.contact.title"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#de:about.contact.name",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "de.json: key \"about.contact.name\" missing",
+          "nodes": [
+            {
+              "target": [
+                "de.json",
+                "about.contact.name"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#de:about.contact.message",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "de.json: key \"about.contact.message\" missing",
+          "nodes": [
+            {
+              "target": [
+                "de.json",
+                "about.contact.message"
+              ]
+            }
+          ],
+          "status": "open"
+        },
+        {
+          "id": "i18n:missing-key#de:about.contact.send",
+          "ruleId": "locale-completeness",
+          "impact": "serious",
+          "category": "locale",
+          "description": "de.json: key \"about.contact.send\" missing",
+          "nodes": [
+            {
+              "target": [
+                "de.json",
+                "about.contact.send"
+              ]
+            }
+          ],
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "url": "http://localhost:8080/index.html",
+      "path": "/index.html",
+      "slug": "index",
+      "screenshots": {
+        "desktop": "reports/i18n/baseline/index-desktop.png",
+        "mobile": "reports/i18n/baseline/index-mobile.png"
+      },
+      "violations": []
+    },
+    {
+      "url": "http://localhost:8080/about.html",
+      "path": "/about.html",
+      "slug": "about",
+      "screenshots": {
+        "desktop": "reports/i18n/baseline/about-desktop.png",
+        "mobile": "reports/i18n/baseline/about-mobile.png"
+      },
+      "violations": []
+    }
+  ]
+}

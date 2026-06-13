@@ -1,4 +1,25 @@
 {
   "brand": "하버 라이트 커뮤니티 키친",
-  "nav.home": "홈"
+  "nav.home": "홈",
+  "nav.about": "소개",
+  "nav.donate": "후원하기",
+  "hero.title": "모든 이웃을 위한 따뜻한 한 끼",
+  "hero.lede": "하버 지구에서 매일 400끼의 무료 식사를 조건 없이 제공합니다.",
+  "hero.cta": "자원봉사 참여하기",
+  "programs.title": "우리의 프로그램",
+  "programs.meals.title": "매일 식사 제공",
+  "programs.meals.body": "주 7일, 아침과 저녁을 제공합니다.",
+  "programs.garden.title": "공동체 텃밭",
+  "programs.garden.body": "이웃이 함께 가꾸고 나누는 신선한 농산물.",
+  "signup.title": "소식 받기",
+  "signup.email": "이메일 주소",
+  "footer.copy": "© 하버 라이트 커뮤니티 키친",
+  "about.title": "우리 키친 소개",
+  "about.lede": "2009년에 설립되어 200만 끼 이상을 제공해 왔습니다.",
+  "about.mission.title": "우리의 사명",
+  "about.mission.body": "하버 지구를 존엄과 함께, 한 접시씩 채웁니다.",
+  "about.contact.title": "문의하기",
+  "about.contact.name": "이름",
+  "about.contact.message": "메시지",
+  "about.contact.send": "보내기"
 }

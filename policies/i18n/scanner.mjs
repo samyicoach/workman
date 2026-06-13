@@ -57,8 +57,9 @@ function lintHardcodedStrings() {
     while ((m = re.exec(cleaned)) !== null) {
       const text = m[1].trim();
       if (!text || !/[A-Za-zÀ-ɏ]/.test(text)) continue; // ignore punctuation/whitespace
-      // Look back at the opening tag for this text node.
-      const before = cleaned.slice(0, m.index);
+      // Look back at the opening tag for this text node. The match begins at the
+      // leading `>`, so include it (m.index + 1) to capture that tag's full source.
+      const before = cleaned.slice(0, m.index + 1);
       const openTag = before.match(/<([a-zA-Z][\w-]*)\b[^<>]*>$/);
       if (openTag && SKIP_TAGS.test(openTag[1])) continue;
       const carriesKey = openTag && /\bdata-i18n\s*=/.test(openTag[0]);

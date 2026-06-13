@@ -1,4 +1,25 @@
 {
   "brand": "Cocina Comunitaria Harbor Light",
-  "nav.home": "Inicio"
+  "nav.home": "Inicio",
+  "nav.about": "Acerca de",
+  "nav.donate": "Donar",
+  "hero.title": "Comidas calientes para cada vecino",
+  "hero.lede": "Servimos 400 comidas gratis al día en el distrito del puerto, sin preguntas.",
+  "hero.cta": "Sé voluntario",
+  "programs.title": "Nuestros programas",
+  "programs.meals.title": "Servicio de comidas diario",
+  "programs.meals.body": "Desayuno y cena, los siete días de la semana.",
+  "programs.garden.title": "Huerto comunitario",
+  "programs.garden.body": "Productos frescos cultivados y compartidos por el barrio.",
+  "signup.title": "Mantente en contacto",
+  "signup.email": "Correo electrónico",
+  "footer.copy": "© Cocina Comunitaria Harbor Light",
+  "about.title": "Sobre nuestra cocina",
+  "about.lede": "Fundada en 2009, hemos servido más de dos millones de comidas.",
+  "about.mission.title": "Nuestra misión",
+  "about.mission.body": "Alimentar al distrito del puerto con dignidad, un plato a la vez.",
+  "about.contact.title": "Ponte en contacto",
+  "about.contact.name": "Tu nombre",
+  "about.contact.message": "Mensaje",
+  "about.contact.send": "Enviar"
 }
