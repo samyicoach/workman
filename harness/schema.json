@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://retrofit.dev/schema/violations.json",
+  "title": "Retrofit violations manifest",
+  "description": "The work queue and progress metric for a Retrofit run. Produced by the crawler, consumed by the Builder, and re-emitted by Verifier A.",
+  "type": "object",
+  "required": ["policy", "generatedAt", "target", "viewports", "summary", "pages"],
+  "properties": {
+    "policy": { "type": "string", "enum": ["a11y", "i18n"] },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "target": { "type": "string", "description": "Base URL or repo path under remediation" },
+    "phase": { "type": "string", "enum": ["baseline", "verify"], "default": "baseline" },
+    "viewports": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Viewport names exercised, e.g. desktop, mobile"
+    },
+    "summary": {
+      "type": "object",
+      "required": ["pages", "totalViolations"],
+      "properties": {
+        "pages": { "type": "integer", "minimum": 0 },
+        "totalViolations": { "type": "integer", "minimum": 0 },
+        "byImpact": {
+          "type": "object",
+          "additionalProperties": { "type": "integer", "minimum": 0 }
+        }
+      }
+    },
+    "pages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["url", "path", "violations"],
+        "properties": {
+          "url": { "type": "string" },
+          "path": { "type": "string" },
+          "slug": { "type": "string" },
+          "screenshots": {
+            "type": "object",
+            "additionalProperties": { "type": "string" }
+          },
+          "violations": {
+            "type": "array",
+            "items": { "$ref": "#/definitions/violation" }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "violation": {
+      "type": "object",
+      "required": ["id", "ruleId", "impact", "category", "description", "status"],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Stable per-occurrence id the Builder references in commits, e.g. axe:image-alt#about:0"
+        },
+        "ruleId": { "type": "string", "description": "Scanner rule, e.g. image-alt, color-contrast, hardcoded-string" },
+        "impact": { "type": "string", "enum": ["minor", "moderate", "serious", "critical"] },
+        "category": { "type": "string", "description": "images | contrast | headings | forms | keyboard | strings | locale | overflow" },
+        "description": { "type": "string" },
+        "wcag": { "type": "array", "items": { "type": "string" } },
+        "viewport": { "type": "string" },
+        "nodes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "target": { "type": "array", "items": { "type": "string" } },
+              "html": { "type": "string" },
+              "failureSummary": { "type": "string" }
+            }
+          }
+        },
+        "status": { "type": "string", "enum": ["open", "fixed", "verified"], "default": "open" },
+        "fixCommit": { "type": "string", "description": "Set by the Builder; the commit that addresses this id" }
+      }
+    }
+  }
+}

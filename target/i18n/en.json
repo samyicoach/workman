@@ -1,0 +1,22 @@
+{
+  "brand": "Harbor Light Community Kitchen",
+  "nav.home": "Home",
+  "nav.about": "About",
+  "nav.donate": "Donate",
+  "hero.title": "Hot meals for every neighbor",
+  "hero.lede": "We serve 400 free meals a day in the harbor district — no questions asked.",
+  "hero.cta": "Volunteer with us",
+  "programs.title": "Our programs",
+  "programs.meals.title": "Daily meal service",
+  "programs.meals.body": "Breakfast and dinner, seven days a week.",
+  "programs.garden.title": "Community garden",
+  "programs.garden.body": "Fresh produce grown and shared by the block.",
+  "signup.title": "Stay in touch",
+  "footer.copy": "© Harbor Light Community Kitchen",
+  "about.title": "About our kitchen",
+  "about.lede": "Founded in 2009, we have served more than two million meals.",
+  "about.mission.title": "Our mission",
+  "about.mission.body": "Nourish the harbor district with dignity, one plate at a time.",
+  "about.contact.title": "Get in touch",
+  "about.contact.send": "Send"
+}

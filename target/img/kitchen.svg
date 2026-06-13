@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="280" viewBox="0 0 440 280" role="img">
+  <rect width="440" height="280" fill="#f3ede4"/>
+  <rect y="190" width="440" height="90" fill="#d8c7a8"/>
+  <rect x="40" y="120" width="120" height="70" fill="#b9c9c2"/>
+  <rect x="55" y="135" width="40" height="40" fill="#7fa39a"/>
+  <circle cx="250" cy="150" r="34" fill="#e8a06a"/>
+  <rect x="300" y="110" width="90" height="80" rx="6" fill="#cfd8dc"/>
+  <rect x="312" y="95" width="14" height="20" fill="#9aa7ab"/>
+  <path d="M200 280 q20-60 60-60 t60 60" fill="#8a6d4f"/>
+  <text x="220" y="40" font-family="sans-serif" font-size="20" fill="#5a4a36" text-anchor="middle">Volunteers plating hot meals</text>
+</svg>

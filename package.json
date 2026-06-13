@@ -1,0 +1,22 @@
+{
+  "name": "retrofit",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Retrofit — an autonomous web remediation engine. One engine, swappable policies.",
+  "scripts": {
+    "serve": "http-server target -p 8080 -c-1 --silent",
+    "crawl": "node harness/crawl.mjs",
+    "verify": "node harness/verify-policy.mjs",
+    "capture": "node harness/visual-capture.mjs",
+    "report": "node harness/report.mjs",
+    "smoke": "node harness/smoke.mjs"
+  },
+  "dependencies": {
+    "axe-core": "^4.12.1",
+    "playwright": "^1.56.1"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

@@ -1,0 +1,130 @@
+/* Harbor Light Community Kitchen — demo target stylesheet.
+   Aesthetic: 2025-era minimalism — system sans typography, generous negative
+   space, one restrained accent, hairline dividers, soft cards, pill buttons.
+
+   NOTE: this BASELINE deliberately ships accessibility defects for Retrofit to
+   remediate without touching the layout:
+     - .lede / footer use an over-light gray (a classic "minimalist" contrast
+       failure)
+     - .btn label sits at too-low contrast on the accent
+     - there is no visible :focus indicator
+   The Ramp policy fixes lightness only; hue, type, and layout stay put. */
+
+:root {
+  --accent: #0f7a6f;          /* deep teal */
+  --accent-ink: #b9ded9;      /* TOO LIGHT on accent — button-label defect */
+  --ink: #14181d;
+  --muted: #b7bcc2;           /* TOO LIGHT on white — body/lede contrast defect */
+  --bg: #ffffff;
+  --surface: #f6f7f8;
+  --line: #ebedef;
+  --radius: 14px;
+  --maxw: 720px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem;
+}
+
+header strong { font-size: 1.05rem; font-weight: 650; letter-spacing: -0.02em; }
+
+nav a {
+  color: var(--ink);
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+nav a:hover { opacity: 1; }
+
+main { max-width: var(--maxw); margin: 0 auto; padding: 1rem 1.5rem 2rem; }
+
+h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); line-height: 1.05; letter-spacing: -0.03em; margin: 1.5rem 0 0.75rem; }
+h2 { font-size: 1.9rem; letter-spacing: -0.02em; margin: 2.5rem 0 0.75rem; }
+h3 { font-size: 1.15rem; letter-spacing: -0.015em; margin: 2.25rem 0 0.5rem; }
+
+.hero { text-align: center; padding: 2.5rem 0 1rem; }
+.hero img { width: 100%; max-width: 460px; height: 280px; object-fit: cover; border-radius: var(--radius); }
+
+.lede { color: var(--muted); font-size: 1.2rem; max-width: 34ch; margin: 0.75rem auto 1.5rem; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--accent);
+  color: var(--accent-ink);
+  padding: 0.8rem 1.5rem;
+  border-radius: 999px;
+  border: 0;
+  font: inherit;
+  font-weight: 550;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.12s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+
+/* No :focus-visible styling on purpose — focus-indicator defect for Ramp. */
+
+hr, img.divider { display: none; } /* the dashed divider is decorative only */
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem;
+}
+.card img { width: 100%; height: 150px; object-fit: cover; border-radius: 10px; }
+.card h3 { margin: 0.85rem 0 0.35rem; }
+.card p { margin: 0; color: var(--ink); }
+
+form { margin-top: 1.5rem; display: grid; gap: 0.75rem; max-width: 420px; }
+input, textarea {
+  font: inherit;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+}
+textarea { min-height: 96px; resize: vertical; }
+
+footer {
+  border-top: 1px solid var(--line);
+  max-width: var(--maxw);
+  margin: 3rem auto 0;
+  padding: 1.5rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 520px) {
+  .cards { grid-template-columns: 1fr; }
+  header { flex-wrap: wrap; gap: 0.5rem; }
+  .hero img { height: 220px; }
+}
