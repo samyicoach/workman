@@ -40,37 +40,34 @@ artifacts (live site + screenshots + manifest).
 ```bash
 npm install
 npx playwright install chromium chromium-headless-shell
-
-# 1. serve the demo target (a deliberately broken nonprofit site)
-npm run serve            # http://localhost:8080
-
-# 2. smoke test the loop on one page (do this before the full run)
-npm run smoke -- --policy a11y --page /index.html
-
-# 3. baseline crawl — produces the work queue
-npm run crawl -- --policy a11y
-
-# 4. ... Builder fixes target/ ...
-
-# 5. verify (independent re-scan + visual diff)
-npm run verify -- --policy a11y --require-zero
-npm run capture -- --policy a11y
-
-# 6. compliance report for the PR
-npm run report -- --policy a11y
+npm run serve                       # demo target on http://localhost:8080
 ```
 
-Swap the policy to localize the same site:
+Then run the whole verification loop for a policy with one command:
 
 ```bash
-npm run crawl   -- --policy i18n
-# ... Builder completes ko/es/de catalogs ...
-npm run verify  -- --policy i18n --require-zero   # locale completeness + extraction
-npm run locales -- --locales en,ko,es,de          # per-locale overflow (German = stress test)
-npm run report  -- --policy i18n
+npm run retrofit -- --policy a11y   # Verifier A + B + keyboard + axtree + rubric gate + report
+npm run retrofit -- --policy i18n   # same engine, different policy file
+npm run dashboard                   # build reports/dashboard.html (the demo)
+npx http-server reports -p 8088     # open http://localhost:8088/dashboard.html
 ```
 
+The individual steps (used by the orchestrator, also runnable alone):
+
+| Command | Role |
+| --- | --- |
+| `npm run crawl -- --policy a11y [--baseline]` | Crawler/Mapper → `violations.json` work queue |
+| `npm run verify -- --policy a11y --require-zero` | **Verifier A** — independent policy re-scan |
+| `npm run capture -- --policy a11y` | **Verifier B** — visual diff (honors `accepted.json`) |
+| `npm run keyboard` | a11y keyboard traversal / focus / trap check |
+| `npm run locales` | i18n per-locale overflow + lang check (German = stress test) |
+| `npm run rubric -- --policy a11y --require-green` | self-grade rubric from verifier artifacts |
+| `npm run report -- --policy a11y` | before/after compliance report |
+| `npm run smoke -- --policy a11y --page /index.html` | one-page sanity check |
+
 Point it at any site with `--target https://example.org --pages /,/about`.
+
+See **`DEMO.md`** for the 3-minute run sheet.
 
 ## Results on the demo target
 
@@ -86,15 +83,23 @@ mobile image overflow) — recorded in `NOTES.md`.
 ## Layout
 
 ```
-harness/        crawler, verifiers, report, shared lib, violations.json schema
+harness/
+  crawl.mjs / lib/      Crawler/Mapper + shared browser/scan/util + violations schema
+  verify-policy.mjs     Verifier A (independent policy re-scan)
+  visual-capture.mjs    Verifier B (visual diff; honors accepted.json)
+  keyboard.mjs          a11y keyboard / focus / trap verifier
+  axtree.mjs            screen-reader accessible-name dump (before/after)
+  locale-shots.mjs      i18n per-locale overflow + lang check (German = stress test)
+  rubric-status.mjs     self-grades the rubric from verifier artifacts only
+  retrofit.mjs          one-command orchestrator (verify suite + gate + report)
+  dashboard.mjs         builds reports/dashboard.html
 policies/
-  a11y/         Ramp: rubric.md + axe-core scanner
-  i18n/         Polyglot: rubric.md + hardcoded-string/locale/pseudo scanner
-  locale-shots.mjs  Polyglot Verifier B aid: render every locale, detect overflow
+  a11y/ , i18n/         rubric.md + scanner.mjs + checks.mjs per policy
 workflow/       kickoff brief + Builder / Verifier A / Verifier B prompts
 target/         demo site under remediation
-reports/<policy>/  baseline/, current/, locales/ artifacts + compliance report
+reports/<policy>/  baseline/, current/, locales/, rubric-status, compliance report
 NOTES.md        persistent memory — rules distilled from rejected fixes
+DEMO.md         3-minute demo run sheet
 ```
 
 ## Definition of done
