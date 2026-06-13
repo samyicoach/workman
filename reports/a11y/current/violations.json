@@ -1,6 +1,6 @@
 {
   "policy": "a11y",
-  "generatedAt": "2026-06-13T22:36:49.953Z",
+  "generatedAt": "2026-06-13T22:38:41.751Z",
   "target": "http://localhost:8080",
   "phase": "verify",
   "viewports": [

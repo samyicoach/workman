@@ -15,7 +15,8 @@
     "rubric": "node harness/rubric-status.mjs",
     "retrofit": "node harness/retrofit.mjs",
     "dashboard": "node harness/dashboard.mjs",
-    "smoke": "node harness/smoke.mjs"
+    "smoke": "node harness/smoke.mjs",
+    "test": "node harness/retrofit.mjs --policy a11y && node harness/retrofit.mjs --policy i18n"
   },
   "dependencies": {
     "axe-core": "^4.12.1",
