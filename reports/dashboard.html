@@ -1,0 +1,120 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Retrofit — compliance dashboard</title>
+<style>
+  :root{--ink:#14181d;--muted:#5b6168;--accent:#0b6157;--line:#e8eaec;--surface:#f6f7f8;--bg:#fff;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;letter-spacing:-.01em}
+  .wrap{max-width:1040px;margin:0 auto;padding:2rem 1.25rem 4rem}
+  header.hero{text-align:center;padding:3rem 0 1rem}
+  h1{font-size:clamp(2.2rem,6vw,3.2rem);letter-spacing:-.03em;margin:.2rem 0}
+  .tag{color:var(--muted);font-size:1.15rem;max-width:42ch;margin:.5rem auto 0}
+  .policies{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin:2.5rem 0}
+  .pcard{border:1px solid var(--line);border-radius:16px;padding:1.5rem;background:var(--surface)}
+  .pcard h2{margin:.1rem 0 .25rem;font-size:1.35rem}
+  .pcard .sub{color:var(--muted);margin:0 0 1rem;font-size:.95rem}
+  .count{display:flex;align-items:baseline;gap:.6rem}
+  .big{font-size:2.6rem;font-weight:700;letter-spacing:-.04em}
+  .was{color:#b03a2e;text-decoration:line-through;text-decoration-thickness:2px}
+  .now{color:var(--accent)}
+  .lbl{color:var(--muted)}
+  .pill{display:inline-block;background:var(--accent);color:#fff;border-radius:999px;padding:.25rem .8rem;font-size:.85rem;font-weight:600;margin-top:1rem}
+  section{margin:3.5rem 0}
+  section>h3{font-size:1.6rem;letter-spacing:-.02em;border-bottom:1px solid var(--line);padding-bottom:.5rem}
+  table{border-collapse:collapse;width:100%;font-size:.92rem;margin:1rem 0}
+  td,th{padding:.5rem .6rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  th{font-size:.8rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+  .rubric .ic{width:1.5rem}.rubric .vf,.sr .vf{color:var(--muted);font-variant:small-caps;white-space:nowrap}
+  .rubric .dt{color:var(--muted);font-size:.84rem}
+  tr.fail{background:#fff4f2}
+  .empty-cell .empty{color:#b03a2e;font-style:italic}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  figure{margin:0}figcaption{font-size:.78rem;color:var(--muted);margin-bottom:.3rem}
+  .ba img,.loc img{width:100%;border:1px solid var(--line);border-radius:10px;display:block}
+  .ba{margin:1.5rem 0}
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+  .loc.hot{outline:3px solid var(--accent);outline-offset:3px;border-radius:12px}
+  .callout{background:#fffbeb;border:1px solid #fde68a;border-left:4px solid #f59e0b;border-radius:10px;padding:1rem 1.25rem;margin:1.25rem 0}
+  .callout b{color:#92400e}
+  .sr td:nth-child(2){background:#fff7f6}
+  footer{margin-top:4rem;border-top:1px solid var(--line);padding-top:1.5rem;color:var(--muted);text-align:center}
+  code{background:var(--surface);padding:.1rem .35rem;border-radius:5px}
+  @media(max-width:720px){.policies,.gallery{grid-template-columns:1fr}.gallery{grid-template-columns:1fr 1fr}}
+</style></head><body><div class="wrap">
+
+<header class="hero">
+  <h1>Retrofit</h1>
+  <p class="tag">An autonomous web remediation engine that sees its own work. One engine, swappable policies — we ran it twice on two different problems.</p>
+</header>
+
+<div class="policies">
+  <div class="pcard">
+    <h2>Ramp — accessibility</h2>
+    <p class="sub">WCAG 2.1 AA · axe-core + keyboard + vision</p>
+    <div class="count"><span class="big"><span class="was">32</span> → <span class="now">0</span></span><span class="lbl">violations</span></div>
+    <span class="pill">7/7 rubric items green</span>
+  </div>
+  <div class="pcard">
+    <h2>Polyglot — localization</h2>
+    <p class="sub">ko / es / de · extraction + completeness + overflow</p>
+    <div class="count"><span class="big"><span class="was">63</span> → <span class="now">0</span></span><span class="lbl">violations</span></div>
+    <span class="pill">5/5 rubric items green</span>
+  </div>
+</div>
+
+<section>
+  <h3>Ramp — rubric (self-graded from verifier output)</h3>
+  <table class="rubric"><tbody><tr class="pass"><td class="ic">✅</td><td>axe-core: 0 serious/critical violations, desktop + mobile</td><td class="vf">A</td><td class="dt">0 violations</td></tr><tr class="pass"><td class="ic">✅</td><td>Keyboard: all reachable, logical order, no traps, visible focus</td><td class="vf">A</td><td class="dt">reachable=true focusRing=true noTraps=true</td></tr><tr class="pass"><td class="ic">✅</td><td>Meaningful alt text on every image (decorative = empty)</td><td class="vf">A+B</td><td class="dt">image-alt=0, unnamed nodes=0 (names confirmed by vision)</td></tr><tr class="pass"><td class="ic">✅</td><td>Color contrast ≥ AA, brand hue preserved</td><td class="vf">A</td><td class="dt">color-contrast=0</td></tr><tr class="pass"><td class="ic">✅</td><td>Valid heading hierarchy (one h1, no skipped levels)</td><td class="vf">A</td><td class="dt">heading-order=0, page-has-heading-one=0</td></tr><tr class="pass"><td class="ic">✅</td><td>Every input has a programmatic label; errors via aria-live</td><td class="vf">A</td><td class="dt">label=0 (aria-live status region present)</td></tr><tr class="pass"><td class="ic">✅</td><td>Layout diff within threshold (contrast/focus allowed, shifts rejected)</td><td class="vf">B</td><td class="dt">1 flagged, all accepted by vision</td></tr><tr class="na"><td class="ic">➖</td><td>Lighthouse accessibility ≥ 95</td><td class="vf">A</td><td class="dt">Lighthouse not installed in this environment</td></tr></tbody></table>
+</section>
+
+<section>
+  <h3>Screen reader: gibberish → coherent</h3>
+  <p>What a screen reader announces on the home page, before and after. Nobody wrote these names by filename — they were generated by looking at the images.</p>
+  <table class="sr"><thead><tr><th>role</th><th>screen reader: before</th><th>after</th></tr></thead><tbody><tr><td class="vf">img</td><td class="empty-cell"><span class="empty">‹empty — announced as "img"›</span></td><td>Volunteers plating hot meals at the kitchen counter</td></tr><tr><td class="vf">img</td><td class="empty-cell"><span class="empty">‹empty — announced as "img"›</span></td><td>Volunteers serving hot meals from the counter</td></tr><tr><td class="vf">img</td><td class="empty-cell"><span class="empty">‹empty — announced as "img"›</span></td><td>Fruit trees and raised beds in the community garden under a bright sun</td></tr><tr><td class="vf">link</td><td class="empty-cell">Home</td><td>Home</td></tr><tr><td class="vf">link</td><td class="empty-cell">About</td><td>About</td></tr><tr><td class="vf">link</td><td class="empty-cell">Donate</td><td>Donate</td></tr><tr><td class="vf">link</td><td class="empty-cell">Volunteer with us</td><td>Volunteer with us</td></tr><tr><td class="vf">link</td><td class="empty-cell"><span class="empty">‹empty — announced as "link"›</span></td><td>Save Harbor Light to your favorites</td></tr><tr><td class="vf">textbox</td><td class="empty-cell"><span class="empty">‹empty — announced as "textbox"›</span></td><td>Email address</td></tr></tbody></table>
+</section>
+
+<section>
+  <h3>Ramp — before / after</h3>
+  <div class="callout"><b>The autonomy moment.</b> Verifier B rejected the first <code>about.html</code> heading fix: re-tagging the title shifted the page ~12px because the new class set <code>line-height:1.2</code> while the original inherited <code>1.6</code>. Nobody told it this broke — it saw it. The Builder matched the line-height and it passed. (Logged in <code>NOTES.md</code>.)</div>
+  <div class="ba">
+        <h4>/index.html — desktop</h4>
+        <div class="cols">
+          <figure><figcaption>before</figcaption><img loading="lazy" src="a11y/baseline/index-desktop.png"></figure>
+          <figure><figcaption>after</figcaption><img loading="lazy" src="a11y/current/index-desktop.png"></figure>
+        </div></div><div class="ba">
+        <h4>/about.html — desktop</h4>
+        <div class="cols">
+          <figure><figcaption>before</figcaption><img loading="lazy" src="a11y/baseline/about-desktop.png"></figure>
+          <figure><figcaption>after</figcaption><img loading="lazy" src="a11y/current/about-desktop.png"></figure>
+        </div></div>
+</section>
+
+<section>
+  <h3>Polyglot — rubric (self-graded)</h3>
+  <table class="rubric"><tbody><tr class="pass"><td class="ic">✅</td><td>0 hardcoded user-facing strings (pseudo-locale proves extraction total)</td><td class="vf">A</td><td class="dt">hardcoded-string=0, pseudo-leak=0</td></tr><tr class="pass"><td class="ic">✅</td><td>All 3 locale catalogs complete (no missing/untranslated keys)</td><td class="vf">A</td><td class="dt">locale-completeness=0</td></tr><tr class="pass"><td class="ic">✅</td><td>No overflow/truncation/overlap per locale at 1440 &amp; 390 (German = stress test)</td><td class="vf">B</td><td class="dt">no overflow in any locale</td></tr><tr class="na"><td class="ic">➖</td><td>Dates &amp; numbers via Intl, not string concatenation</td><td class="vf">A</td><td class="dt">no dynamic date/number formatting on the demo target</td></tr><tr class="pass"><td class="ic">✅</td><td>lang attribute correct per locale; language switcher works</td><td class="vf">A+B</td><td class="dt">langs={"en":"en","ko":"ko","es":"es","de":"de"}</td></tr><tr class="pass"><td class="ic">✅</td><td>Base-locale (English) pixel-identical to pre-migration baseline</td><td class="vf">B</td><td class="dt">1 flagged, all accepted by vision</td></tr></tbody></table>
+</section>
+
+<section>
+  <h3>Polyglot — every locale, no overflow</h3>
+  <div class="callout"><b>The vision verifier earns its keep again.</b> The per-locale overflow check surfaced a bare <code>&lt;img&gt;</code> on <code>about.html</code> overflowing the 390px viewport in every locale — a defect the accessibility scanner never caught (axe doesn't test horizontal overflow). Constrained to <code>max-width:100%</code>; all locales clean. German is the stress test.</div>
+  <div class="gallery"><figure class="loc ">
+        <figcaption>English</figcaption>
+        <img loading="lazy" src="i18n/locales/index-en-mobile.png">
+      </figure><figure class="loc ">
+        <figcaption>한국어</figcaption>
+        <img loading="lazy" src="i18n/locales/index-ko-mobile.png">
+      </figure><figure class="loc ">
+        <figcaption>Español</figcaption>
+        <img loading="lazy" src="i18n/locales/index-es-mobile.png">
+      </figure><figure class="loc hot">
+        <figcaption>Deutsch (stress test)</figcaption>
+        <img loading="lazy" src="i18n/locales/index-de-mobile.png">
+      </figure></div>
+</section>
+
+<footer>
+  <p><b>Done is a file the model grades itself against.</b> Swap <code>policies/&lt;policy&gt;/rubric.md</code>, get a new product.</p>
+  <p>Rubrics: <code>policies/a11y/rubric.md</code> · <code>policies/i18n/rubric.md</code> — full reports under <code>reports/&lt;policy&gt;/compliance-report.md</code></p>
+</footer>
+
+</div></body></html>
