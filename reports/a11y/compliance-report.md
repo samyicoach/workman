@@ -20,8 +20,8 @@
 
 | Screenshot | Δheight | Signal |
 | --- | ---: | --- |
-| `about-desktop.png` | 0.0% | ✅ within threshold |
-| `about-mobile.png` | 0.0% | ✅ within threshold |
+| `about-desktop.png` | 0.6% | ✅ within threshold |
+| `about-mobile.png` | 5.3% | ⚠️ review |
 | `index-desktop.png` | 0.0% | ✅ within threshold |
 | `index-mobile.png` | 0.0% | ✅ within threshold |
 

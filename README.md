@@ -54,13 +54,34 @@ npm run crawl -- --policy a11y
 
 # 5. verify (independent re-scan + visual diff)
 npm run verify -- --policy a11y --require-zero
-npm run capture
+npm run capture -- --policy a11y
 
 # 6. compliance report for the PR
-npm run report
+npm run report -- --policy a11y
+```
+
+Swap the policy to localize the same site:
+
+```bash
+npm run crawl   -- --policy i18n
+# ... Builder completes ko/es/de catalogs ...
+npm run verify  -- --policy i18n --require-zero   # locale completeness + extraction
+npm run locales -- --locales en,ko,es,de          # per-locale overflow (German = stress test)
+npm run report  -- --policy i18n
 ```
 
 Point it at any site with `--target https://example.org --pages /,/about`.
+
+## Results on the demo target
+
+| Policy | Before | After | Verifier B |
+| --- | ---: | ---: | --- |
+| **Ramp** (a11y) | 32 violations | **0** | only allowed deltas (contrast/focus); no forbidden layout shift |
+| **Polyglot** (i18n) | 63 violations | **0** | no overflow in en/ko/es/de |
+
+See `reports/a11y/compliance-report.md` and `reports/i18n/compliance-report.md`.
+Both runs caught and self-corrected a real defect (a heading line-height shift; a
+mobile image overflow) — recorded in `NOTES.md`.
 
 ## Layout
 
@@ -69,9 +90,10 @@ harness/        crawler, verifiers, report, shared lib, violations.json schema
 policies/
   a11y/         Ramp: rubric.md + axe-core scanner
   i18n/         Polyglot: rubric.md + hardcoded-string/locale/pseudo scanner
+  locale-shots.mjs  Polyglot Verifier B aid: render every locale, detect overflow
 workflow/       kickoff brief + Builder / Verifier A / Verifier B prompts
 target/         demo site under remediation
-reports/        baseline/ and current/ artifacts (screenshots + manifests)
+reports/<policy>/  baseline/, current/, locales/ artifacts + compliance report
 NOTES.md        persistent memory — rules distilled from rejected fixes
 ```
 
