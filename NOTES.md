@@ -30,4 +30,9 @@ repeats. Append; never delete a rule that is still true.
 
 ## Rejections log
 
-_(append dated entries as Verifier B rejects fixes)_
+- **2026-06-13 — about.html h2→h1 re-tag.** Verifier B flagged ~1.1% height
+  shift on about-desktop/mobile: content below the title crept up ~12px. Cause:
+  the new `.page-title` class set `line-height: 1.2`, but the original `<h2>`
+  inherited the body's `line-height: 1.6`. **Rule:** when re-tagging a heading to
+  preserve its look, match `line-height` too, not just `font-size` and `margin`.
+  An un-set line-height inherits `body` (1.6 here) — replicate that exactly.

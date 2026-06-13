@@ -18,8 +18,7 @@
 
   <main>
     <section class="hero">
-      <!-- defect: hero image has no alt text -->
-      <img src="img/kitchen.svg" />
+      <img src="img/kitchen.svg" alt="Volunteers plating hot meals at the kitchen counter" />
       <h1 data-i18n="hero.title">Hot meals for every neighbor</h1>
       <!-- defect: low-contrast lede text -->
       <p class="lede" data-i18n="hero.lede">
@@ -29,29 +28,26 @@
       <a class="btn" href="#" data-i18n="hero.cta">Volunteer with us</a>
     </section>
 
-    <!-- defect: heading level skips from h1 to h3 -->
-    <h3 data-i18n="programs.title">Our programs</h3>
+    <h2 class="section-title" data-i18n="programs.title">Our programs</h2>
     <div class="cards">
       <div class="card">
-        <!-- defect: missing alt -->
-        <img src="img/kitchen.svg" />
+        <img src="img/kitchen.svg" alt="Volunteers serving hot meals from the counter" />
         <h3 data-i18n="programs.meals.title">Daily meal service</h3>
         <p data-i18n="programs.meals.body">Breakfast and dinner, seven days a week.</p>
       </div>
       <div class="card">
-        <!-- defect: missing alt -->
-        <img src="img/garden.svg" />
+        <img src="img/garden.svg" alt="Fruit trees and raised beds in the community garden under a bright sun" />
         <h3 data-i18n="programs.garden.title">Community garden</h3>
         <p data-i18n="programs.garden.body">Fresh produce grown and shared by the block.</p>
       </div>
     </div>
 
-    <h3 data-i18n="signup.title">Stay in touch</h3>
+    <h2 class="section-title" data-i18n="signup.title">Stay in touch</h2>
     <form>
-      <!-- defect: input has no programmatic label and no accessible name -->
-      <input type="email" name="email" />
-      <!-- defect: icon-only link with no accessible name -->
-      <a href="#" class="btn"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M8 1l2 5 5 .4-4 3.3 1.3 5L8 12l-4.3 2.7L5 9.7 1 6.4 6 6z" fill="currentColor"/></svg></a>
+      <label class="sr-only" for="signup-email" data-i18n="signup.email">Email address</label>
+      <input id="signup-email" type="email" name="email" aria-label="Email address" />
+      <a href="#" class="btn" aria-label="Save Harbor Light to your favorites"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 1l2 5 5 .4-4 3.3 1.3 5L8 12l-4.3 2.7L5 9.7 1 6.4 6 6z" fill="currentColor"/></svg></a>
+      <p class="sr-only" role="status" aria-live="polite" id="signup-status"></p>
     </form>
   </main>
 

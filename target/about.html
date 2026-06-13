@@ -17,26 +17,26 @@
   </header>
 
   <main>
-    <!-- defect: page opens at h2 (no h1) -->
-    <h2 data-i18n="about.title">About our kitchen</h2>
-    <!-- defect: low-contrast lede -->
+    <h1 class="page-title" data-i18n="about.title">About our kitchen</h1>
     <p class="lede" data-i18n="about.lede">
       Founded in 2009, we have served more than two million meals.
     </p>
 
-    <img src="img/garden.svg" />
+    <img src="img/garden.svg" alt="The community garden with fruit trees and green beds on a sunny day" />
 
-    <h3 data-i18n="about.mission.title">Our mission</h3>
+    <h2 class="section-title" data-i18n="about.mission.title">Our mission</h2>
     <p data-i18n="about.mission.body">
       Nourish the harbor district with dignity, one plate at a time.
     </p>
 
-    <h3 data-i18n="about.contact.title">Get in touch</h3>
+    <h2 class="section-title" data-i18n="about.contact.title">Get in touch</h2>
     <form>
-      <!-- defect: inputs lack labels and accessible names -->
-      <input type="text" name="name" />
-      <textarea name="message"></textarea>
+      <label class="sr-only" for="contact-name" data-i18n="about.contact.name">Your name</label>
+      <input id="contact-name" type="text" name="name" aria-label="Your name" />
+      <label class="sr-only" for="contact-message" data-i18n="about.contact.message">Message</label>
+      <textarea id="contact-message" name="message" aria-label="Message"></textarea>
       <button class="btn" type="submit" data-i18n="about.contact.send">Send</button>
+      <p class="sr-only" role="status" aria-live="polite" id="contact-status"></p>
     </form>
   </main>
 

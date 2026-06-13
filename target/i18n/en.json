@@ -12,11 +12,14 @@
   "programs.garden.title": "Community garden",
   "programs.garden.body": "Fresh produce grown and shared by the block.",
   "signup.title": "Stay in touch",
+  "signup.email": "Email address",
   "footer.copy": "© Harbor Light Community Kitchen",
   "about.title": "About our kitchen",
   "about.lede": "Founded in 2009, we have served more than two million meals.",
   "about.mission.title": "Our mission",
   "about.mission.body": "Nourish the harbor district with dignity, one plate at a time.",
   "about.contact.title": "Get in touch",
+  "about.contact.name": "Your name",
+  "about.contact.message": "Message",
   "about.contact.send": "Send"
 }
