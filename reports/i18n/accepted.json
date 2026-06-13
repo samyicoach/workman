@@ -1,0 +1,6 @@
+{
+  "_comment": "Verifier B (vision) decisions on flagged visual pairs for the base locale (English).",
+  "acceptedShots": {
+    "about-mobile.png": "Base-locale English Δheight is the required overflow fix surfaced by the Polyglot overflow check — the baseline image overflowed mobile. Accepted as a correction, not a regression."
+  }
+}

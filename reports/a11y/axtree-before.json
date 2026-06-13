@@ -1,0 +1,128 @@
+{
+  "label": "before",
+  "target": "http://localhost:8090",
+  "pages": [
+    {
+      "path": "/index.html",
+      "slug": "index",
+      "nodes": [
+        {
+          "role": "img",
+          "name": "",
+          "decorative": false
+        },
+        {
+          "role": "img",
+          "name": "",
+          "decorative": false
+        },
+        {
+          "role": "img",
+          "name": "",
+          "decorative": false
+        },
+        {
+          "role": "link",
+          "name": "Home"
+        },
+        {
+          "role": "link",
+          "name": "About"
+        },
+        {
+          "role": "link",
+          "name": "Donate"
+        },
+        {
+          "role": "link",
+          "name": "Volunteer with us"
+        },
+        {
+          "role": "link",
+          "name": ""
+        },
+        {
+          "role": "textbox",
+          "name": ""
+        },
+        {
+          "role": "heading",
+          "level": 1,
+          "name": "Hot meals for every neighbor"
+        },
+        {
+          "role": "heading",
+          "level": 3,
+          "name": "Our programs"
+        },
+        {
+          "role": "heading",
+          "level": 3,
+          "name": "Daily meal service"
+        },
+        {
+          "role": "heading",
+          "level": 3,
+          "name": "Community garden"
+        },
+        {
+          "role": "heading",
+          "level": 3,
+          "name": "Stay in touch"
+        }
+      ],
+      "unnamedCount": 5
+    },
+    {
+      "path": "/about.html",
+      "slug": "about",
+      "nodes": [
+        {
+          "role": "img",
+          "name": "",
+          "decorative": false
+        },
+        {
+          "role": "link",
+          "name": "Home"
+        },
+        {
+          "role": "link",
+          "name": "About"
+        },
+        {
+          "role": "link",
+          "name": "Donate"
+        },
+        {
+          "role": "button",
+          "name": "Send"
+        },
+        {
+          "role": "textbox",
+          "name": ""
+        },
+        {
+          "role": "textbox",
+          "name": ""
+        },
+        {
+          "role": "heading",
+          "level": 2,
+          "name": "About our kitchen"
+        },
+        {
+          "role": "heading",
+          "level": 3,
+          "name": "Our mission"
+        },
+        {
+          "role": "heading",
+          "level": 3,
+          "name": "Get in touch"
+        }
+      ],
+      "unnamedCount": 3
+    }
+  ]
+}

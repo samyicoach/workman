@@ -1,0 +1,64 @@
+{
+  "policy": "a11y",
+  "passed": 7,
+  "total": 7,
+  "allGreen": true,
+  "checks": [
+    {
+      "id": "axe-zero",
+      "label": "axe-core: 0 serious/critical violations, desktop + mobile",
+      "verifier": "A",
+      "status": "pass",
+      "detail": "0 violations"
+    },
+    {
+      "id": "keyboard",
+      "label": "Keyboard: all reachable, logical order, no traps, visible focus",
+      "verifier": "A",
+      "status": "pass",
+      "detail": "reachable=true focusRing=true noTraps=true"
+    },
+    {
+      "id": "alt-text",
+      "label": "Meaningful alt text on every image (decorative = empty)",
+      "verifier": "A+B",
+      "status": "pass",
+      "detail": "image-alt=0, unnamed nodes=0 (names confirmed by vision)"
+    },
+    {
+      "id": "contrast",
+      "label": "Color contrast ≥ AA, brand hue preserved",
+      "verifier": "A",
+      "status": "pass",
+      "detail": "color-contrast=0"
+    },
+    {
+      "id": "headings",
+      "label": "Valid heading hierarchy (one h1, no skipped levels)",
+      "verifier": "A",
+      "status": "pass",
+      "detail": "heading-order=0, page-has-heading-one=0"
+    },
+    {
+      "id": "forms",
+      "label": "Every input has a programmatic label; errors via aria-live",
+      "verifier": "A",
+      "status": "pass",
+      "detail": "label=0 (aria-live status region present)"
+    },
+    {
+      "id": "visual",
+      "label": "Layout diff within threshold (contrast/focus allowed, shifts rejected)",
+      "verifier": "B",
+      "status": "pass",
+      "detail": "1 flagged, all accepted by vision"
+    },
+    {
+      "id": "lighthouse",
+      "label": "Lighthouse accessibility ≥ 95",
+      "verifier": "A",
+      "status": "na",
+      "detail": "Lighthouse not installed in this environment"
+    }
+  ]
+}

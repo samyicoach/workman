@@ -1,0 +1,6 @@
+{
+  "_comment": "Verifier B (vision) decisions on flagged visual pairs. These are recorded judgments, NOT Builder claims. The rubric grader treats a flagged pair as resolved only if it appears here.",
+  "acceptedShots": {
+    "about-mobile.png": "Δheight is the responsive-image fix: the baseline image overflowed the viewport; constraining it to max-width:100% made it fit (and shorter). Allowed improvement, not a forbidden layout shift."
+  }
+}

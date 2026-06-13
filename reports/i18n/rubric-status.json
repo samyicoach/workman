@@ -1,0 +1,50 @@
+{
+  "policy": "i18n",
+  "passed": 5,
+  "total": 5,
+  "allGreen": true,
+  "checks": [
+    {
+      "id": "no-hardcoded",
+      "label": "0 hardcoded user-facing strings (pseudo-locale proves extraction total)",
+      "verifier": "A",
+      "status": "pass",
+      "detail": "hardcoded-string=0, pseudo-leak=0"
+    },
+    {
+      "id": "locales-complete",
+      "label": "All 3 locale catalogs complete (no missing/untranslated keys)",
+      "verifier": "A",
+      "status": "pass",
+      "detail": "locale-completeness=0"
+    },
+    {
+      "id": "no-overflow",
+      "label": "No overflow/truncation/overlap per locale at 1440 & 390 (German = stress test)",
+      "verifier": "B",
+      "status": "pass",
+      "detail": "no overflow in any locale"
+    },
+    {
+      "id": "intl-formatting",
+      "label": "Dates & numbers via Intl, not string concatenation",
+      "verifier": "A",
+      "status": "na",
+      "detail": "no dynamic date/number formatting on the demo target"
+    },
+    {
+      "id": "lang-switcher",
+      "label": "lang attribute correct per locale; language switcher works",
+      "verifier": "A+B",
+      "status": "pass",
+      "detail": "langs={\"en\":\"en\",\"ko\":\"ko\",\"es\":\"es\",\"de\":\"de\"}"
+    },
+    {
+      "id": "base-identical",
+      "label": "Base-locale (English) pixel-identical to pre-migration baseline",
+      "verifier": "B",
+      "status": "pass",
+      "detail": "1 flagged, all accepted by vision"
+    }
+  ]
+}

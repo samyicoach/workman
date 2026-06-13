@@ -1,0 +1,128 @@
+{
+  "label": "after",
+  "target": "http://localhost:8080",
+  "pages": [
+    {
+      "path": "/index.html",
+      "slug": "index",
+      "nodes": [
+        {
+          "role": "img",
+          "name": "Volunteers plating hot meals at the kitchen counter",
+          "decorative": false
+        },
+        {
+          "role": "img",
+          "name": "Volunteers serving hot meals from the counter",
+          "decorative": false
+        },
+        {
+          "role": "img",
+          "name": "Fruit trees and raised beds in the community garden under a bright sun",
+          "decorative": false
+        },
+        {
+          "role": "link",
+          "name": "Home"
+        },
+        {
+          "role": "link",
+          "name": "About"
+        },
+        {
+          "role": "link",
+          "name": "Donate"
+        },
+        {
+          "role": "link",
+          "name": "Volunteer with us"
+        },
+        {
+          "role": "link",
+          "name": "Save Harbor Light to your favorites"
+        },
+        {
+          "role": "textbox",
+          "name": "Email address"
+        },
+        {
+          "role": "heading",
+          "level": 1,
+          "name": "Hot meals for every neighbor"
+        },
+        {
+          "role": "heading",
+          "level": 2,
+          "name": "Our programs"
+        },
+        {
+          "role": "heading",
+          "level": 3,
+          "name": "Daily meal service"
+        },
+        {
+          "role": "heading",
+          "level": 3,
+          "name": "Community garden"
+        },
+        {
+          "role": "heading",
+          "level": 2,
+          "name": "Stay in touch"
+        }
+      ],
+      "unnamedCount": 0
+    },
+    {
+      "path": "/about.html",
+      "slug": "about",
+      "nodes": [
+        {
+          "role": "img",
+          "name": "The community garden with fruit trees and green beds on a sunny day",
+          "decorative": false
+        },
+        {
+          "role": "link",
+          "name": "Home"
+        },
+        {
+          "role": "link",
+          "name": "About"
+        },
+        {
+          "role": "link",
+          "name": "Donate"
+        },
+        {
+          "role": "button",
+          "name": "Send"
+        },
+        {
+          "role": "textbox",
+          "name": "Your name"
+        },
+        {
+          "role": "textbox",
+          "name": "Message"
+        },
+        {
+          "role": "heading",
+          "level": 1,
+          "name": "About our kitchen"
+        },
+        {
+          "role": "heading",
+          "level": 2,
+          "name": "Our mission"
+        },
+        {
+          "role": "heading",
+          "level": 2,
+          "name": "Get in touch"
+        }
+      ],
+      "unnamedCount": 0
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "summary": {
+    "allReachable": true,
+    "visibleFocusOnAll": true,
+    "noFocusTraps": true
+  },
+  "pages": [
+    {
+      "path": "/index.html",
+      "slug": "index",
+      "interactiveCount": 6,
+      "reached": 8,
+      "order": [
+        {
+          "tag": "a",
+          "name": "Home",
+          "hasRing": true
+        },
+        {
+          "tag": "a",
+          "name": "About",
+          "hasRing": true
+        },
+        {
+          "tag": "a",
+          "name": "Donate",
+          "hasRing": true
+        },
+        {
+          "tag": "a",
+          "name": "Volunteer with us",
+          "hasRing": true
+        },
+        {
+          "tag": "input",
+          "name": "Email address",
+          "hasRing": true
+        },
+        {
+          "tag": "a",
+          "name": "Save Harbor Light to your favorites",
+          "hasRing": true
+        },
+        {
+          "tag": "a",
+          "name": "Home",
+          "hasRing": true
+        },
+        {
+          "tag": "a",
+          "name": "About",
+          "hasRing": true
+        }
+      ],
+      "visibleFocusOnAll": true,
+      "focusTrap": false
+    },
+    {
+      "path": "/about.html",
+      "slug": "about",
+      "interactiveCount": 6,
+      "reached": 8,
+      "order": [
+        {
+          "tag": "a",
+          "name": "Home",
+          "hasRing": true
+        },
+        {
+          "tag": "a",
+          "name": "About",
+          "hasRing": true
+        },
+        {
+          "tag": "a",
+          "name": "Donate",
+          "hasRing": true
+        },
+        {
+          "tag": "input",
+          "name": "Your name",
+          "hasRing": true
+        },
+        {
+          "tag": "textarea",
+          "name": "Message",
+          "hasRing": true
+        },
+        {
+          "tag": "button",
+          "name": "Send",
+          "hasRing": true
+        },
+        {
+          "tag": "a",
+          "name": "Home",
+          "hasRing": true
+        },
+        {
+          "tag": "a",
+          "name": "About",
+          "hasRing": true
+        }
+      ],
+      "visibleFocusOnAll": true,
+      "focusTrap": false
+    }
+  ]
+}

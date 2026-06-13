@@ -24,6 +24,7 @@ async function main() {
 
   const browser = await launch();
   const findings = [];
+  const langs = {}; // locale -> html lang attribute actually applied
 
   for (const path of pages) {
     for (const locale of locales) {
@@ -57,6 +58,8 @@ async function main() {
           return out;
         });
 
+        langs[locale] = await page.evaluate(() => document.documentElement.getAttribute('lang'));
+
         const slug = slugForPath(path);
         const shot = `${slug}-${locale}-${vp.name}.png`;
         await page.screenshot({ path: join(outDir, shot), fullPage: true });
@@ -71,7 +74,9 @@ async function main() {
   }
   await browser.close();
 
-  writeFileSync(join(outDir, 'overflow.json'), JSON.stringify({ findings }, null, 2));
+  // Language-switcher check: each requested locale must apply a matching lang.
+  const langOk = locales.every((l) => (langs[l] || '').toLowerCase().startsWith(l));
+  writeFileSync(join(outDir, 'overflow.json'), JSON.stringify({ findings, langs, langSwitcherOk: langOk }, null, 2));
 
   console.log('\n  page / locale / viewport            overflow');
   console.log('  ' + '-'.repeat(52));
